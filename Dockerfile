@@ -12,8 +12,8 @@ FROM nginx:1.17.1-alpine
 COPY --from=build-step /app/docs /usr/share/nginx/html
 
 # Configure NGINX
-COPY ./openshift/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./openshift/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+#COPY ./openshift/nginx/nginx.conf /etc/nginx/nginx.conf
+#COPY ./openshift/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && chmod -R 777 /var
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
