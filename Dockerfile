@@ -18,6 +18,6 @@ COPY --from=build-step /app/docs /usr/share/nginx/html
 #RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && chmod -R 777 /var
 #RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
-chmod -R 777 /var/cache/nginx 
-
 EXPOSE 4200
+
+USER 1001
