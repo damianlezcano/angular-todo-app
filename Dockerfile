@@ -1,5 +1,6 @@
 # Stage 1
 FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:14-ubi8 as build-step
+USER root
 RUN mkdir -p /app
 WORKDIR /app
 COPY package.json /app
